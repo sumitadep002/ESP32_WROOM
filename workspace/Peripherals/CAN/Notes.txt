@@ -1,0 +1,61 @@
+1)Basic information:
+->It is a Broadcast based multimaster and error detection communication protocol
+->It provides message filtering feature
+->Every message is associated with an ID lower the ID higher the priority
+
+2)Messagge frame structure
+->identifier 11 or 29 bits.
+->Data Length Code (DLC) (0 to 8 bit)
+->Upto 8 bytes of data.
+
+3)Operating modes
+i)Normal modes:
+->The normal operating mode allows the CAN controller to take part in bus activities such as transmit-
+ting and receiving messages/error frames. Acknowledgement from another CAN node is required when transmitting
+message frames.
+
+ii)No Ack Mode:
+->The No Acknowledgement mode is similar to normal mode, however acknowledgements are not
+required when transmitting message frames. This mode is useful when self testing the CAN controller.
+->Use it while testing.
+
+iii)List only Mode:
+->It will restrict device to receive only without provoding acknowledgement on the bus.
+->Well suited to moniter the network.
+
+4)Alerts:
+
+Alert								Description
+-------------------------------------------------------------------------------------------------------------
+CAN_ALERT_TX_IDLE					No more messages queued for transmission
+CAN_ALERT_TX_SUCCESS				The previous transmission was successful
+CAN_ALERT_BELOW_ERR_WARN			Both error counters have dropped below error warning limit
+CAN_ALERT_ERR_ACTIVE				CAN controller has become error active
+CAN_ALERT_RECOVERY_IN_PROGRESS 		CAN controller is undergoing bus recovery
+CAN_ALERT_BUS_RECOVERED				CAN controller has successfully completed bus recovery
+CAN_ALERT_ARB_LOST					The previous transmission lost arbitration
+CAN_ALERT_ABOVE_ERR_WARN			One of the error counters have exceeded the error warning limit
+CAN_ALERT_BUS_ERROR					A (Bit, Stuff, CRC, Form, ACK) error has occurred on the bus
+CAN_ALERT_TX_FAILED					The previous transmission has failed
+CAN_ALERT_RX_QUEUE_FULL				The RX queue is full causing a received frame to be lost
+CAN_ALERT_ERR_PASS					CAN controller has become error passive
+CAN_ALERT_BUS_OFF					Bus-off condition occurred. CAN controller can no longer influence bus
+
+
+
+5)Bit timing:   
+->set the timing time quanta for a bit to be read/write on bus, basically it decides width of a bit.
+->1 bit consists of multiple time quantas
+
+6)Acceptance filer:
+->Accept the frame only if it is sent from desired node by looking at it's ID, but acknowledge even if it is does not match.
+
+7)Acceptance Code:
+->Specify the pattern for ID to be received from BUS.
+
+8)Operation Modes:
+->Normal mode: Transmit, Receive frames, transmition/reception is allowed
+->No Ack: There won't be acknowledgement for whether frame is transmitted or not.
+->Listen only: 	not transmission no acknoledgement only reception.
+
+9)
