@@ -1,4 +1,4 @@
 workspace_2
-Toolchain_Setup/esp/
+Toolchain_SDK/esp/
 **/build/
 workspace/examples/
