@@ -48,6 +48,10 @@ For more in-depth information and documentation on ESP-IDF and ESP32 development
 
 If you encounter any issues or have suggestions for improvement, feel free to open an issue or submit a pull request.
 
+## Notes in Progress
+
+I am currently preparing notes on some important topics, including the booting sequence, build system, and working on new or example projects.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
