@@ -35,8 +35,9 @@ while(1)
 	int timeout = Mills_To_Tick(1000);
     int rxBytes = uart_read_bytes(UART_NUM_2, rx_buffer, RX_BUF_SIZE, timeout);
     if (rxBytes > 0) {
-        rx_buffer[rxBytes] = '\0';
-        ESP_LOGI(RX_TASK_TAG, "Read %d bytes: '%s'", rxBytes, rx_buffer);
+        //rx_buffer[rxBytes] = '\0';
+        ESP_LOGI(RX_TASK_TAG, "Read %d bytes: %s", rxBytes, rx_buffer);
+	rxBytes=0;
     }
 	}
 }
