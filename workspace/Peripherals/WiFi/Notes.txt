@@ -1,0 +1,5 @@
+RTOS event group utility
+------------------------
+->It keeps the information of stated of multiple events, like-> Wifi connected, Wifi disconneted or wifi initialised or deinitialised
+->Every event will have two stated either 0 or 1 called flags
+->There could be 24 events can be configured in one event group, by using API
