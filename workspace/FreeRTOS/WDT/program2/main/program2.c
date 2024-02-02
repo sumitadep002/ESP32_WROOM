@@ -7,7 +7,7 @@
 #include <esp_log.h>
 
 esp_task_wdt_config_t wdt_config={
-									.timeout_ms=10000,
+									.timeout_ms=5000,
 									.idle_core_mask=1<<0,
 									.trigger_panic=false
 									};
@@ -23,8 +23,8 @@ void reset_task(void *arg)
 	char *tag="reset-task";
     while(1){
         //reset the watchdog every 2 seconds
-        ESP_LOGI(tag,"Runnning... and not resetting wdt...");
-        //esp_task_wdt_reset();  //This comment is responnsible weather wdt will be reset or not?
+        ESP_LOGI(tag,"Runnning...");
+        esp_task_wdt_reset();  //This comment is responnsible weather wdt will be reset or not?
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
 }
@@ -39,15 +39,13 @@ void app_main(void)
 	
 	printf("After 10 sec delay\n");
 	
-	#if 0
-    vTaskDelete(task_handle);
-    esp_task_wdt_delete(task_handle);     //Unsubscribe task from TWDT
-    //unsubscribe idle task
-   //esp_task_wdt_delete(xTaskGetIdleTaskHandleForCore(0));  
-    esp_task_wdt_deinit();
-	#endif
 	
-	printf("Everything is done...\n");
+    vTaskDelete(task_handle);
+    esp_task_wdt_delete(task_handle);
+    esp_task_wdt_deinit();  
+   
+	
+	printf("reset task deleted, unsubscribed and WDT deinitialized...\n");
 
 }
 
