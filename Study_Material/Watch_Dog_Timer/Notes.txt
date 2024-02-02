@@ -1,7 +1,7 @@
 1) What is Watch Dog Timer?
 ->It is nothing but a hardware timer which needs to be reset for every certain interval.
 ->In a situation where watch dog timer fails to be reset means, system has got into unwated loop which is not allowing other tasks to take place and that is reason that it failed to reset the watch dog timer.
-->In this kind of situation it fails to reset the watch dog timer and it will issue a timer which triggers the system reset and system is now working normally as it should.
+->In this kind of situation it fails to reset the watch dog timer and it will issue a timeout which triggers the system reset and system is now working normally as it should.
 
 2) Watch Dog Timer in ESP32
 ->refer the WDT_Error.png for an watchdog interrupt.
