@@ -1,8 +1,8 @@
 /*
 flow:
-1)  init nvs to store in wifi configurations in flash
+1)  init nvs to store in wifi configurations in flash -> nvs_flash_init()
 2)  create s_wifi_event_group
-3)  esp_netif_init() -> do not know about this 
+3)  esp_netif_init() -> Initializes the TCP/IP stack
 4)  esp_event_loop_create_default()
 5)  esp_netif_create_default_wifi_sta()
 6)  configure wifi_init_config_t by using WIFI_INIT_CONFIG_DEFAULT
