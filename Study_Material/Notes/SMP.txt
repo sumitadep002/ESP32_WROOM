@@ -1,0 +1,17 @@
+1)Unicore systems
+->unicore means there is only processor core which takes care of program execution
+->Examples: Arduino UNO, STM32F334xx Disco
+
+2)Multi Core systems
+->having more than processor core
+->Dual, Quad or more
+->ESP32 is a dual core microcontroller
+
+3)SMP
+->Symmetric Multi Processing
+->Usually only one task at time can aquire CPU but in case of more than one task can be active depending on how many cores present.
+->ESP32 comes with dual core CPU that means two task at time can be running simultanously.
+
+4)SMP in ESP32
+->There two CPU cores CPU_0 or PRO_CPU and CPU_1 or APP_CPU
+->xTaskCreatePinnedToCore is api which can be used to decide to which processor core you want your task to run on.
