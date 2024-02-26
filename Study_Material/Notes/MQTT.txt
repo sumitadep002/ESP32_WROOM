@@ -1,0 +1,24 @@
+1. What is MQTT?
+--------------
+->Wireless communication protocol.
+->Works on Publish/Subscribe model.
+->Used in Lightweight, Low bandwidth and Machine to Machine communication applications
+
+2. History
+--------------------
+->First used in Oil and Gas insutry
+->It is opensource
+
+3. How it works?
+-------------------------
+->
+
+		------------
+		|			|
+		|			|
+		| 			|
+		| Publisher |
+		|			|
+		|			|
+		|			|
+		------------
